@@ -1,3 +1,4 @@
 Restaurnat WebSite 
-!["website landing page"]("./images/../../full.png")
+!["website landing page"]("images/full.png")
+
 
