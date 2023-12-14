@@ -32,7 +32,7 @@
         <div class="content">
             <h1>Welcome To <span class="primary-text"> Food Lover </span> Restaurant</h1>
             <p>Here you can find Most delicacies food in the world</p>
-            <a href="" class="btn btn-primary">Book a Table</a>
+            <button href="" class="btn btn-primary" id="getRequestButton">Book a Table</button>
         </div>
     </header>
     <!-- Header End -->
@@ -280,5 +280,29 @@
             </footer>
     </main>
     
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>    <script>
+         $(document).ready(function () {
+        // Replace this URL with the endpoint of the fake API you want to test
+        var apiUrl = 'https://jsonplaceholder.typicode.com/todos/1';
+
+        $('#getRequestButton').on('click', function () {
+            $.ajax({
+                url: apiUrl,
+                type: 'GET',
+                success: function (data) {
+                    console.log('Response:', data);
+                    var newWindow = window.open();
+                    newWindow.document.write('<pre>' + JSON.stringify(data, null, 2) + '</pre>');
+                    // Handle the response data here
+                },
+                error: function (error) {
+                    console.error('Error:', error);
+                    // Handle errors here
+                }
+            });
+        });
+    });
+    </script>
 </body>
 </html>
